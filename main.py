@@ -1,7 +1,7 @@
 import numpy as np
 
-from .math import sigmoid
-from .test import 
+from _math import sigmoid
+#from .test import 
 
 def backpropagation(x, Y, w):
     current_Y = None
@@ -9,7 +9,7 @@ def backpropagation(x, Y, w):
     for i in range(10000):
         current_Y = sigmoid(np.dot(x, w))
         error = Y - current_Y
-        adjustment = np.dot(train_X.T, error * (current_Y * (1 - current_Y)))
+        adjustment = np.dot(x.T, error * (current_Y * (1 - current_Y)))
         w += adjustment
 
     return current_Y
