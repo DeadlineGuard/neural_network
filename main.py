@@ -4,7 +4,7 @@ from _math import sigmoid
 from _test import test1, test2
 
 def backpropagation(x, Y, w):
-    for i in range(10000):
+    for i in range(30000):
         current_Y = sigmoid(np.dot(x, w))
         error = Y - current_Y
         adjustment = np.dot(x.T, error * (current_Y * (1 - current_Y)))
@@ -28,6 +28,5 @@ print(train_Y)
 weights = backpropagation(train_x, train_Y, weights)
 print('Предсказание на тренировочном наборе данных')
 print(sigmoid(np.dot(train_x, weights)))
-
 test1(weights)
 test2(weights)
