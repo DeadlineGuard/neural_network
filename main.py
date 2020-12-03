@@ -12,7 +12,7 @@ def backpropagation(x, Y, w):
         adjustment = np.dot(x.T, error * (current_Y * (1 - current_Y)))
         w += adjustment
 
-    return current_Y
+    return current_Y, w
 
 train_x = np.array([
     [0, 1, 1, 0, 0, 0, 1],
@@ -23,5 +23,5 @@ train_x = np.array([
 train_Y = np.array([[0, 1, 0, 0, 1]]).T
 weights = 2 * np.random.random((7,1)) - 1
 
-Y = backpropagation(train_x, train_Y, weights)
+Y, weights = backpropagation(train_x, train_Y, weights)
 print(Y)
