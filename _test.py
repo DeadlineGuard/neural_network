@@ -1,12 +1,14 @@
 import numpy as np
 
+from _math import sigmoid
+
 def predict(x, Y, w):
     print('Тестовый набор входных данных')
     print(x)
     print('Тестовый набор ожидаемых выходных данных')
     print(Y)
     print('Предсказанные значения')
-    print(np.dot(x, w))
+    print(sigmoid(np.dot(x, w)))
 
 # Добавь данные в тесты
 # Данные должны находиться в np.array()
