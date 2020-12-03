@@ -25,13 +25,12 @@ weights = 2 * np.random.random((7,1)) - 1
 
 print('Тренировочный набор входных данных')
 print(train_x)
-print('Тренировочный набор выходных данных')
+print('Тренировочный набор ожидаемых выходных данных')
 print(train_Y)
 
 Y, weights = backpropagation(train_x, train_Y, weights)
 print('Предсказание на тренировочном наборе данных')
 print(Y)
 
-print('Предсказание на тестовом наборе данных')
 test1(w)
 test2(w)
