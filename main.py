@@ -1,7 +1,7 @@
 import numpy as np
 
 from _math import sigmoid
-#from .test import 
+from _test import test1, test2
 
 def backpropagation(x, Y, w):
     current_Y = None
@@ -23,5 +23,15 @@ train_x = np.array([
 train_Y = np.array([[0, 1, 0, 0, 1]]).T
 weights = 2 * np.random.random((7,1)) - 1
 
+print('Тренировочный набор входных данных')
+print(train_x)
+print('Тренировочный набор выходных данных')
+print(train_Y)
+
 Y, weights = backpropagation(train_x, train_Y, weights)
+print('Предсказание на тренировочном наборе данных')
 print(Y)
+
+print('Предсказание на тестовом наборе данных')
+test1(w)
+test2(w)
